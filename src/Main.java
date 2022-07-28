@@ -1,5 +1,45 @@
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        List<Integer> nums = new ArrayList<>(List.of(8, 1, 1, 2, 3, 4, 4, 5, 5, 6, 7, 12));
+        ArrayList<Integer> odd = new ArrayList<>();
+        ArrayList<Integer> even = new ArrayList<>();
+        for (Integer x : nums) {
+            if (x % 2 != 0)// нечетные
+                odd.add(x);
+        }
+        System.out.println(odd); // выводим только нечетные
+
+        for (Integer x : nums) {
+            if (x % 2 == 0) // четные
+                even.add(x); // четные значения в листе
+        }
+        HashSet<Integer> uniqueEven = new HashSet<>(even); //convert ArrayList to HastSet для получения
+        // уникальных значений
+        Collections.sort(even); // сортировка четных значений
+        System.out.println(uniqueEven); // вывод уникальных четных значений по возрастанию
+
+
+        ArrayList<String> kingsName = new ArrayList<>(List.of("Иван", "Петр", "Александр",
+                "Николай", "Иван", "Александр", "Михаил"));
+        HashSet<String> uniqueKingsName = new HashSet<>(kingsName);
+        System.out.println(uniqueKingsName);
+
+        //Задача 4
+        //    Set<String> names = new HashSet<>(kingsName);// Чтобы подсчитать вхождения элементов ArrayList,
+        // мы создаем HashSet и добавляем все элементы ArrayList.
+        //for (String s : names) // перебираем все имена
+        //    System.out.println(s + ": " + Collections.frequency(kingsName, s)); //для подсчета появления
+        // объекта s в коллекции kingsName.
+
+        //Задача 4.1 (как в шпаргалке) // такое решение не учитывает сожержание дублей в нескольких словах,
+        // и не понятно какие слова в итоге задублировались
+        System.out.println(kingsName.size() - uniqueKingsName.size());
     }
 }
+
+
+
+
