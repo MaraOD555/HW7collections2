@@ -27,11 +27,16 @@ public class Main {
         HashSet<String> uniqueKingsName = new HashSet<>(kingsName);
         System.out.println(uniqueKingsName);
 
-        Set<String> names = new HashSet<>(kingsName);// Чтобы подсчитать вхождения элементов ArrayList,
+        //Задача 4
+        //    Set<String> names = new HashSet<>(kingsName);// Чтобы подсчитать вхождения элементов ArrayList,
         // мы создаем HashSet и добавляем все элементы ArrayList.
-        for (String s : names) // перебираем все имена
-            System.out.println(s + ": " + Collections.frequency(kingsName, s)); //для подсчета появления
+        //for (String s : names) // перебираем все имена
+        //    System.out.println(s + ": " + Collections.frequency(kingsName, s)); //для подсчета появления
         // объекта s в коллекции kingsName.
+
+        //Задача 4.1 (как в шпаргалке) // такое решение не учитывает сожержание дублей в нескольких словах,
+        // и не понятно какие слова в итоге задублировались
+        System.out.println(kingsName.size() - uniqueKingsName.size());
     }
 }
 
